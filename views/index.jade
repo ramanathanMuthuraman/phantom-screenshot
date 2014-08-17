@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid
+  .panel.panel-default
+    .panel-heading Screen Visualiser
+    .panel-body
+      form#inputForm.navbar-form.navbar-left(role='search')
+        .form-group
+          input#inputFormGetURL.form-control(type='text', placeholder='Enter URL')
+        button#inputFormSubmit.btn.btn-default(type='button') Submit
+
