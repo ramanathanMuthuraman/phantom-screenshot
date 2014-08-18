@@ -12,7 +12,7 @@ var ScreenDiff =  new function(){
         var url = $.trim($("#inputFormGetURL").val());
         var options={
             method:"GET",
-            data: url,
+            data: {"url":url},
             url:"screenshot"
         };
         var promise = that.synch(options);
@@ -24,7 +24,8 @@ var ScreenDiff =  new function(){
     {
         return $.ajax({
             url:options.url,
-            method:options.method
+            method:options.method,
+             data:options.data
         });
     };
 };
