@@ -6,24 +6,29 @@ var router = express.Router();
  
 router.get('/', function(req, res) {
 var url_parts = url.parse(req.url, true);
-    var query = url_parts.query;
-    var options ={
-    phantomConfig:{
-    'https-proxy':  'http://289990:august-1@proxy.cognizant.com:6050/',
-    'proxy' : 'http://289990:august-1@proxy.cognizant.com:6050/'
-    }
-    };
+    console.log(url_parts.query.url)
+     var screenShotURL = url_parts.query.url;
+
+    if (screenShotURL === undefined || screenShotURL == '') {
+    res.writeHead(404, {'Content-Type': 'text/plain'});
+    res.end("404 Not Found");
+  }
+   	var filename = screenShotURL.replace(/\W/g, '_') + ".png"
       res.writeHead(200, {'Content-Type': 'image/png'});
-      webshot('google.com', 'ram.png', function(err) {
+      webshot(screenShotURL, filename, function(err) {
              if (err) throw err
             console.log('File saved.')
   
-           fs.readFile('ram.png', 'utf8', function(err, image){
-        res.end(image, 'binary');
-    });
+       fs.readFile(filename, function(err, data) {
+  if (err) throw err; // Fail if the file can't be read.
+  
+    res.end(data); // Send the file data to the browser.
+
+
+});
  
 });
-  
+ 
   
 });
  
