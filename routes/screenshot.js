@@ -6,7 +6,7 @@ var router = express.Router();
  
 router.get('/', function(req, res) {
 var url_parts = url.parse(req.url, true);
-    console.log(url_parts.query.url)
+
      var screenShotURL = url_parts.query.url;
 
     if (screenShotURL === undefined || screenShotURL == '') {
