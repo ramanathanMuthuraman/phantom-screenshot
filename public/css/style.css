@@ -1,3 +1,4 @@
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +6,33 @@ body {
 
 a {
   color: #00B7FF;
+}
+#htmlScreenshot{
+    width: 400px;
+    height: 400px;
+    
+}
+.drop-zone {
+border: 10px dashed #ccc;
+color: #ccc;
+font-size: 32px;
+line-height: 400px;
+text-align: center;
+
+}
+.drop-zone:after{
+    content : 'image here'
+}
+.progress-zone{
+    background: url("../img/loader.gif") no-repeat center center;
+ }
+.complete-zone {
+      overflow: auto;
+   
+}
+.failed-zone:after{
+    content : 'Error'
+}
+.invalid-zone:after{
+    content : 'enter url'
 }

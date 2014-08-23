@@ -8,25 +8,23 @@ router.get('/', function(req, res) {
 var url_parts = url.parse(req.url, true);
 
      var screenShotURL = url_parts.query.url;
+var outputPath =__base+"public/result/";
 
     if (screenShotURL === undefined || screenShotURL == '') {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     res.end("404 Not Found");
   }
    	var filename = screenShotURL.replace(/\W/g, '_') + ".png"
-      res.writeHead(200, {'Content-Type': 'image/png'});
-      webshot(screenShotURL, filename, function(err) {
+     var options = {
+      
+         shotSize:{width:'all',height:'all'}
+};
+  
+      webshot(screenShotURL, outputPath+filename,options, function(err) {
              if (err) throw err
-            console.log('File saved.')
-  
-       fs.readFile(filename, function(err, data) {
-  if (err) throw err; // Fail if the file can't be read.
-  
-    res.end(data); // Send the file data to the browser.
+               /*send the filename as response*/
+      res.end(filename);
 
-
-});
- 
 });
  
   

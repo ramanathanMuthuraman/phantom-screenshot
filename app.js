@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var screenshot = require('./routes/screenshot');
 
 var app = express();
-
+global.__base = __dirname + '/';
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

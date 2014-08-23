@@ -10,22 +10,34 @@ var ScreenDiff =  new function(){
     };
     this.getURL = function(){
         var url = $.trim($("#inputFormGetURL").val());
+        if(url){
         var options={
             method:"GET",
             data: {"url":url},
             url:"screenshot"
         };
-        var promise = that.synch(options);
-        promise.then(function(){
-            console.log("new")
-        });
+         $("#htmlScreenshot")
+         .addClass("drop-zone progress-zone").removeClass("complete-zone failed-zone invalid-zone").find("img").attr("src","");
+        that.synch(options);
+        }
+        else{
+            $("#htmlScreenshot").addClass("drop-zone invalid-zone").removeClass("complete-zone failed-zone progress-zone").find("img").attr("src","")
+        }
+      
     };
     this.synch = function(options)
     {
         return $.ajax({
             url:options.url,
             method:options.method,
-             data:options.data
+             data:options.data,
+            success:function(response){
+                $("#htmlScreenshot")
+                .removeClass("drop-zone progress-zone invalid-zone").addClass("complete-zone").find("img").attr("src","/result/"+response);
+            },
+            error:function(){
+             $("#htmlScreenshot").addClass("drop-zone failed-zone").removeClass("progress-zone invalid-zone").find("img").attr("src","");
+        }
         });
     };
 };
