@@ -7,10 +7,14 @@ body {
 a {
   color: #00B7FF;
 }
+.hideScroll{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
 #htmlScreenshot{
-    width: 400px;
-    height: 400px;
-    
+  width: 100%;
+  height:100%;
 }
 .drop-zone {
 border: 10px dashed #ccc;
@@ -26,8 +30,10 @@ text-align: center;
 .progress-zone{
     background: url("../img/loader.gif") no-repeat center center;
  }
-.complete-zone {
-      overflow: auto;
+#htmlScreenshot.complete-zone {
+overflow:scroll; 
+width: 104%;
+
    
 }
 .failed-zone:after{
