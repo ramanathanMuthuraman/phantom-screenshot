@@ -23,7 +23,7 @@ To view the application locally, navigate to [http://localhost:3000/] (http://lo
 
 ## Demo
 
-Check the result [here] (https://phantom-screenshot-myjournal.c9users.io/)
+Check the hosted application's result [here] (https://phantom-screenshot-myjournal.c9users.io/)
 
 ## License
 
