@@ -12,12 +12,14 @@ npm install
 
 ## Usage
 
-Run the below grunt task to get the metrics. 
+Run the below grunt task to run the application in the local server
 
 ```
 grunt
 
 ```
+
+To view the application locally, navigate to http://localhost:3000/
 
 ## Demo
 
