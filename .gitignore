@@ -29,5 +29,8 @@ node_modules
 #UI libraries
 public/components
 
+#Result folder
+public/result
+
 # Temp sass files
 .sass-cache
