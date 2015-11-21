@@ -7,17 +7,22 @@ body {
 a {
   color: #00B7FF;
 }
-.hideScroll{
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
-}
+
 #htmlScreenshot{
   width: 100%;
   height:100%;
+  margin-top:50px;
+  border: 10px dashed #ccc;
+}
+#htmlScreenshot img{
+padding:10%;
+display:none;
+}
+#htmlScreenshot.complete-zone img{
+  display:block;
 }
 .drop-zone {
-border: 10px dashed #ccc;
+
 color: #ccc;
 font-size: 32px;
 line-height: 400px;
@@ -30,15 +35,19 @@ text-align: center;
 .progress-zone{
     background: url("../img/loader.gif") no-repeat center center;
  }
-#htmlScreenshot.complete-zone {
-overflow:scroll; 
-width: 104%;
 
-   
-}
 .failed-zone:after{
     content : 'Error'
 }
 .invalid-zone:after{
     content : 'enter url'
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .helper-text {
+  padding: 9px;
+  border-radius: 2px;
 }

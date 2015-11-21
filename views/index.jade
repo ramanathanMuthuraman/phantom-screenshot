@@ -2,15 +2,14 @@ extends layout
 
 block content
   .container-fluid
-  .panel.panel-default
-    .panel-heading Screen Visualiser
-    .panel-body
-      form#inputForm.navbar-form.navbar-left(role='search')
-        .form-group
-          input#inputFormGetURL.form-control(type='text', placeholder='Enter URL')
-        button#inputFormSubmit.btn.btn-default(type='button') Submit
-        .hideScroll
-            #htmlScreenshot.drop-zone
-                img(src='')
+      form#inputForm(role='search')
+        .flex
+          span.btn-success.helper-text http://
+          input#inputFormGetURL.form-control.input-width-long(type='text', placeholder='Enter URL', aria-describedby='enter-url')
+          span#inputFormSubmit.glyphicon.glyphicon-ok.btn.btn-primary.actions(aria-hidden='true')
+          span#clear.glyphicon.glyphicon-remove.btn.btn-danger.actions(aria-hidden='true')
+
+        #htmlScreenshot.drop-zone
+            img(src='')
            
 

@@ -17,7 +17,7 @@ var outputPath =__base+"public/result/";
   }
    	var filename = screenShotURL.replace(/\W/g, '_') + ".png"
      var options = {
-       windowSize:{width:480,height:320},
+       //windowSize:{width:480,height:320},
        shotSize:{width:'all',height:'all'}
 };
     del.sync(outputPath+"/*");
