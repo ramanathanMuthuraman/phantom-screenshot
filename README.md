@@ -19,7 +19,7 @@ grunt
 
 ```
 
-To view the application locally, navigate to http://localhost:3000/
+To view the application locally, navigate to [http://localhost:3000/] (http://localhost:3000/)
 
 ## Demo
 
