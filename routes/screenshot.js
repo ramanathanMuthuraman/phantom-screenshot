@@ -2,6 +2,7 @@ var express = require('express');
 var url = require('url');
 var webshot = require('webshot');
 var fs      = require('fs');
+var del = require('del');
 var router = express.Router();
  
 router.get('/', function(req, res) {
@@ -19,7 +20,7 @@ var outputPath =__base+"public/result/";
        windowSize:{width:480,height:320},
        shotSize:{width:'all',height:'all'}
 };
-  
+    del.sync(outputPath+"/*");
       webshot(screenShotURL, outputPath+filename,options, function(err) {
              if (err) throw err
                /*send the filename as response*/
