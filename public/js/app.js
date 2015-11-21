@@ -7,6 +7,16 @@ var ScreenDiff =  new function(){
     this.init = function(){
         // Register event listeners
 			$("#inputFormSubmit").click(this.getURL);
+			$("#inputFormGetURL").on('keydown',$.proxy( this.triggerOnKeydownEvent,this ));
+			$("#clear").click(this.clearInput);
+    };
+    this.triggerOnKeydownEvent = function(e){
+      if(e.keyCode === 13){
+          this.getURL();
+      }  
+    };
+    this.clearInput = function(){
+      $("#inputFormGetURL").val('').focus();  
     };
     this.getURL = function(){
         var url = $.trim($("#inputFormGetURL").val());

@@ -2,8 +2,9 @@ extends layout
 
 block content
   .container-fluid
-      form#inputForm(role='search')
-        .flex
+        h1 Screen Visualizer
+        p Give any URL of a webpage below and view its screenshot
+        #inputbox.flex
           span.btn-success.helper-text http://
           input#inputFormGetURL.form-control.input-width-long(type='text', placeholder='Enter URL', aria-describedby='enter-url')
           span#inputFormSubmit.glyphicon.glyphicon-ok.btn.btn-primary.actions(aria-hidden='true')
