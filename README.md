@@ -6,7 +6,7 @@ To take screenshot of web pages using phantom JS
 Download the repo and navigate to the root folder and install the dependencies
 
 ```
-npm install
+npm install && bower install
 
 ```
 
